@@ -1,0 +1,45 @@
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import "leaflet/dist/leaflet.css";
+import L from "leaflet";
+
+// Arreglo para iconos por defecto en React-Leaflet
+delete L.Icon.Default.prototype._getIconUrl;
+L.Icon.Default.mergeOptions({
+  iconRetinaUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png",
+  iconUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png",
+  shadowUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png",
+});
+
+export default function TendidoMap({ puntos }) {
+  if (!puntos || puntos.length === 0) {
+    return (
+      <div className="w-full h-full bg-gray-100 flex items-center justify-center text-gray-400">
+        <p>No hay coordenadas registradas en este período</p>
+      </div>
+    );
+  }
+
+  // Centrar el mapa en el primer punto válido
+  const center = [puntos[0].lat, puntos[0].lng];
+
+  return (
+    <MapContainer center={center} zoom={13} style={{ height: "100%", width: "100%", zIndex: 0 }}>
+      <TileLayer
+        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+      />
+      {puntos.map((p, i) => (
+        <Marker key={i} position={[p.lat, p.lng]}>
+          <Popup>
+            <div className="text-xs">
+              <strong className="block mb-1">{p.tipo}</strong>
+              <span className="block text-gray-600">Tec: {p.tecnico}</span>
+              <span className="block text-gray-600">Fecha: {p.fecha}</span>
+              <span className="block font-bold text-blue-600">{p.metros}m tendidos</span>
+            </div>
+          </Popup>
+        </Marker>
+      ))}
+    </MapContainer>
+  );
+}

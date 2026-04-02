@@ -1,0 +1,83 @@
+{
+  "name": "ReporteTendido",
+  "type": "object",
+  "properties": {
+    "tecnico_id": {
+      "type": "string",
+      "description": "ID del técnico"
+    },
+    "tecnico_nombre": {
+      "type": "string",
+      "description": "Nombre completo del técnico"
+    },
+    "fecha": {
+      "type": "string",
+      "format": "date",
+      "description": "Fecha del tendido"
+    },
+    "proyecto": {
+      "type": "string",
+      "description": "Nombre del proyecto o contrato"
+    },
+    "zona": {
+      "type": "string",
+      "description": "Zona o sector donde se realizó el tendido"
+    },
+    "tipo_fibra": {
+      "type": "string",
+      "enum": ["ADSS", "OPGW", "Ducto", "Aéreo", "Subterráneo"],
+      "description": "Tipo de fibra tendida"
+    },
+    "metraje_tendido": {
+      "type": "number",
+      "description": "Metros de fibra tendidos en el día (liquidación - salida)"
+    },
+    "metraje_salida": {
+      "type": "number",
+      "description": "Metraje de inicio de la bobina"
+    },
+    "metraje_liquidacion": {
+      "type": "number",
+      "description": "Metraje de fin de la bobina"
+    },
+    "cliente": {
+      "type": "string",
+      "description": "Nombre del cliente"
+    },
+    "coordenada_inicial": {
+      "type": "string",
+      "description": "Coordenada inicial del tendido"
+    },
+    "coordenada_final": {
+      "type": "string",
+      "description": "Coordenada final del tendido"
+    },
+    "foto_url": {
+      "type": "string",
+      "description": "URL de evidencia fotográfica"
+    },
+    "metraje_meta": {
+      "type": "number",
+      "description": "Meta de metraje asignada para el día"
+    },
+    "tiempo_horas": {
+      "type": "number",
+      "description": "Horas trabajadas"
+    },
+    "observaciones": {
+      "type": "string",
+      "description": "Observaciones o notas del trabajo"
+    },
+    "estado": {
+      "type": "string",
+      "enum": ["completado", "en_progreso", "cancelado"],
+      "default": "completado",
+      "description": "Estado del reporte"
+    },
+    "incidencias": {
+      "type": "string",
+      "description": "Incidencias o problemas encontrados"
+    }
+  },
+  "required": ["tecnico_id", "tecnico_nombre", "fecha", "metraje_tendido"]
+}

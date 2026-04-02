@@ -1,0 +1,32 @@
+{
+  "name": "OrdenInstalacion",
+  "type": "object",
+  "properties": {
+    "numero_orden": { "type": "string" },
+    "fecha_ingreso": { "type": "string", "format": "date" },
+    "cliente": { "type": "string" },
+    "sede": { "type": "string" },
+    "celular": { "type": "string" },
+    "contrato_tiene": { "type": "boolean", "default": false },
+    "plan": { "type": "string" },
+    "capacidad_modulo": { "type": "string" },
+    "equipo": { "type": "string" },
+    "foto_fachada_url": { "type": "string" },
+    "coordenadas": { "type": "string" },
+    "comentario": { "type": "string" },
+    "asesor": { "type": "string" },
+    "tipo_servicio": { "type": "string" },
+    "prioridad": { "type": "string" },
+    "plazo_dias": { "type": "number" },
+    "estado": { "type": "string", "enum": ["PEXT", "INGENIERIA", "COMPLETADO"], "default": "PEXT" },
+    "asignado_a": { "type": "string" },
+    "pext_ruteo": { "type": "boolean", "default": false },
+    "pext_tendido": { "type": "boolean", "default": false },
+    "pext_fusion": { "type": "boolean", "default": false },
+    "fecha_inicio": { "type": "string", "format": "date" },
+    "fecha_activacion": { "type": "string", "format": "date" },
+    "activado_por": { "type": "string" },
+    "fecha_derivacion_ing": { "type": "string", "format": "date" }
+  },
+  "required": ["numero_orden", "fecha_ingreso", "cliente", "estado"]
+}

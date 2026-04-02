@@ -1,0 +1,47 @@
+{
+  "name": "ConfiguracionApp",
+  "type": "object",
+  "properties": {
+    "tema": {
+      "type": "string",
+      "description": "Color principal (hex)"
+    },
+    "fondo": {
+      "type": "string",
+      "description": "Color o URL de fondo"
+    },
+    "titulo_app": {
+      "type": "string",
+      "description": "Título de la aplicación"
+    },
+    "logo_url": {
+      "type": "string",
+      "description": "URL del logo de la aplicación"
+    },
+    "asesores": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "capacidades_modulo": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "tipos_servicio": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "tipos_trabajo_fusion": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "planes": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "prioridades": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  },
+  "required": []
+}

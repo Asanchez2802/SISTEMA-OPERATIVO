@@ -1,0 +1,37 @@
+{
+  "name": "Tecnico",
+  "type": "object",
+  "properties": {
+    "nombre": {
+      "type": "string",
+      "description": "Nombre del técnico"
+    },
+    "apellido": {
+      "type": "string",
+      "description": "Apellido del técnico"
+    },
+    "cedula": {
+      "type": "string",
+      "description": "Cédula de identidad"
+    },
+    "telefono": {
+      "type": "string",
+      "description": "Teléfono de contacto"
+    },
+    "zona": {
+      "type": "string",
+      "description": "Zona o área de trabajo asignada"
+    },
+    "estado": {
+      "type": "string",
+      "enum": ["activo", "inactivo"],
+      "default": "activo",
+      "description": "Estado del técnico"
+    },
+    "foto_url": {
+      "type": "string",
+      "description": "URL de la foto del técnico"
+    }
+  },
+  "required": ["nombre", "apellido", "cedula"]
+}

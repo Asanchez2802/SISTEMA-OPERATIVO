@@ -1,0 +1,17 @@
+{
+  "name": "RolUsuario",
+  "type": "object",
+  "properties": {
+    "email": {
+      "type": "string",
+      "description": "Email del usuario"
+    },
+    "rol": {
+      "type": "string",
+      "enum": ["Administrador", "Colaborador", "Evaluador"],
+      "default": "Colaborador",
+      "description": "Nivel de acceso"
+    }
+  },
+  "required": ["email", "rol"]
+}
